@@ -1,0 +1,13 @@
+#navbarSupportedContent > form > input {
+	box-shadow: 0 17px 40px 0 rgb(75 128 182 / 7%);
+}
+.blue-gradient {
+	background: linear-gradient(40deg, #45cafc, #303f9f);
+	border-style: solid;
+	border-color: rgb(64, 62, 201);
+	border-width: 1px;
+	box-shadow: #020708;
+}
+.pill_white {
+	background-color: #ebebeb;
+}
