@@ -4,9 +4,9 @@ Stream any Downloadable Media
 
 ## Use
 
-| parameters | e.g.                                                                                                                                  |
-| ---        | :---                                                                                                                                  |
-| url        | `https://stream.code-rgb.vercel.app/?url=https://test-videos.co.uk/vids/bigbuckbunny/mp4/h264/1080/Big_Buck_Bunny_1080_10s_30MB.mp4`  |
+| parameters | e.g.                                                                                                                                |
+| ---        | :---                                                                                                                                |
+| url        | https://stream.code-rgb.vercel.app/?url=https://test-videos.co.uk/vids/bigbuckbunny/mp4/h264/1080/Big_Buck_Bunny_1080_10s_30MB.mp4  |
 
 
 ## Deploy
