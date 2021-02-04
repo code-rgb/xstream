@@ -1,28 +1,3 @@
-const video_link = window.location.search.substr(1).split("url=")[1];
-// const video_link =
-// 	"https://storage.googleapis.com/tribal-sign-302203/MIA7TE51JSBS/22a_1612005883_2234.mp4";
-const player = new Plyr("#player");
-
-function change_src() {
-	player.source = {
-		type: "video",
-		title: "Example title",
-		sources: [
-			{
-				src: video_link,
-				type: "video/mp4",
-				//   size: 720
-			},
-		],
-		// poster: poster
-		autoplay: false,
-		muted: true,
-	};
-}
-if (video_link) {
-	change_src();
-}
-// change_src();
 //  ------------------Theme Toggle------------------
 var darkMode = document.getElementById("darkMode");
 var darkLabel = "darkModeLabel";
@@ -101,3 +76,29 @@ function resetTheme() {
 	}
 }
 //  ----------------------------------------------
+
+const video_link = window.location.search.substr(1).split("url=")[1];
+// const video_link =
+// 	"https://storage.googleapis.com/tribal-sign-302203/MIA7TE51JSBS/22a_1612005883_2234.mp4";
+const player = new Plyr("#player");
+
+function change_src() {
+	player.source = {
+		type: "video",
+		title: "Example title",
+		sources: [
+			{
+				src: video_link,
+				type: "video/mp4",
+				//   size: 720
+			},
+		],
+		// poster: poster
+		autoplay: false,
+		muted: true,
+	};
+}
+if (video_link) {
+	change_src();
+}
+// change_src();
