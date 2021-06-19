@@ -77,28 +77,65 @@ function resetTheme() {
 }
 //  ----------------------------------------------
 
-const video_link = window.location.search.substr(1).split("url=")[1];
-// const video_link =
-// 	"https://storage.googleapis.com/tribal-sign-302203/MIA7TE51JSBS/22a_1612005883_2234.mp4";
-const player = new Plyr("#player");
+// const video_link = window.location.search.substr(1).split("url=")[1];
+// // const video_link =
+// // 	"https://storage.googleapis.com/tribal-sign-302203/MIA7TE51JSBS/22a_1612005883_2234.mp4";
+// const player = new Plyr("#player");
 
-function change_src() {
-	player.source = {
-		type: "video",
-		title: "Example title",
-		sources: [
-			{
-				src: video_link,
-				type: "video/mp4",
-				//   size: 720
-			},
-		],
-		// poster: poster
-		autoplay: false,
-		muted: true,
-	};
-}
-if (video_link) {
-	change_src();
-}
+// function change_src() {
+// 	player.source = {
+// 		type: "video",
+// 		title: "Example title",
+// 		sources: [
+// 			{
+// 				src: video_link,
+// 				type: "video/mp4",
+// 				//   size: 720
+// 			},
+// 		],
+// 		// poster: poster
+// 		autoplay: false,
+// 		muted: true,
+// 	};
+// }
+// change_src()
+// if (video_link) {
+// 	change_src();
+// }
 // change_src();
+var playerElement = document.getElementById("player");
+player = new Clappr.Player({
+    source: "http://live.nonsavefiles.xyz/live/espn.m3u8",
+    height: '100%',
+    width: '100%',
+    autoPlay: false,
+    //  poster: '',
+    plugins: [CDNByeClapprPlugin],
+    playback: {
+        hlsjsConfig: {
+            maxBufferSize: 0,
+            maxBufferLength: 10,
+            liveSyncDurationCount: 10,
+            p2pConfig: {
+                live: true,
+            }
+        }
+    },
+    mediacontrol: {
+        buttons: "#EE0000"
+    },
+    mimeType: "application/x-mpegURL"
+});
+player.attachTo(playerElement);
+
+function resizePlayer() {
+    var aspectRatio = 9 / 16,
+        newWidth = document.getElementById('player').parentElement.offsetWidth,
+        newHeight = 2 * Math.round(newWidth * aspectRatio / 2);
+    player.resize({
+        width: newWidth,
+        height: newHeight
+    });
+}
+resizePlayer();
+window.onresize = resizePlayer;
